@@ -217,3 +217,111 @@ You can get the new version of device software using this action.
             "firmwareReleaseDate": "2015-08-10",
             "firmwareLink": "http://wattbike.com/assets/software/Wattbike-ModelB-firmware-V12300-20150810.bin"
         }
+
+## Users get [/api/ranking/users/id/{userid}]
+
+### Get the user information [GET]
+
+You can get the user information using this action. 
+You must sets the user id in Parameters. 
+This is an optional example with user id 92855eb01cdd9fa1.
+
++ Parameters
+      + userid (number, optional)  ... ID of our User.
+      
+         + Default: 92855eb01cdd9fa1
+      
++ Request (application/json)
+
+    + Headers
+
+            X-API-KEY : AY7JsQof82R3NTaZu0KSzJJLiR364cSk
+            Accept : application/json
+            
++ Response 200 (application/json)
+
+        {
+            "id": "92855eb01cdd9fa1",
+            "username": "andymccorkell",
+            "firstName": "Andy",
+            "surname": "McCorkell",
+            "displayName": "Andy M",
+            "gender": "m",
+            "dob": "362185200",
+            "country": "GB",
+            "profileImage": "http://hub.wattbike.com/files/thumb/1_5Ypgfl4N0CayFTwt.jpg",
+            "joined": "2014-04-01 10:43:56",
+            "group": "1",
+            "mmp": 234,
+            "mhr": 112,
+            "ftp": 201,
+            "weight": 100,
+            "wbMonitors": [
+                "00000000",
+                "00000000",
+                "00000000",
+                "00000000"
+            ],
+            "hrMonitors": [
+                "00000000",
+                "00000000",
+                "00000000",
+                "00000000"
+            ],
+            "settings": {
+                "distance": "km",
+                "workoutType": "ftp"
+            }
+        }
+
+## Workouts List [/api/ranking/workouts]
+
+### List all Workouts  [GET]
+
+A response is defined as a list item within an action.
+Lists are created by preceding list items with either a +, * or -.
+
+This action returns a 200 status code along with a JSON body.
+      
++ Request (application/json)
+
+    + Headers
+
+            X-API-KEY : AY7JsQof82R3NTaZu0KSzJJLiR364cSk
+            Accept : application/json
+            
++ Response 200 (application/json)
+
+        {
+            "id": "92855eb01cdd9fa1",
+            "username": "andymccorkell",
+            "firstName": "Andy",
+            "surname": "McCorkell",
+            "displayName": "Andy M",
+            "gender": "m",
+            "dob": "362185200",
+            "country": "GB",
+            "profileImage": "http://hub.wattbike.com/files/thumb/1_5Ypgfl4N0CayFTwt.jpg",
+            "joined": "2014-04-01 10:43:56",
+            "group": "1",
+            "mmp": 234,
+            "mhr": 112,
+            "ftp": 201,
+            "weight": 100,
+            "wbMonitors": [
+                "00000000",
+                "00000000",
+                "00000000",
+                "00000000"
+            ],
+            "hrMonitors": [
+                "00000000",
+                "00000000",
+                "00000000",
+                "00000000"
+            ],
+            "settings": {
+                "distance": "km",
+                "workoutType": "ftp"
+            }
+        }
