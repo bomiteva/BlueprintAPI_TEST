@@ -83,4 +83,30 @@ It takes a JSON object containing an account email address and an account passwo
             "userId": "92855eb01cdd9fa1"
         }
    
+## Token Verification [/api/ranking/auths]
 
+### Send token verification [POST]
+
+You may send token verification using this action. It takes a JSON
+object containing a token. If this is a valid token, 
+service return user account releated to this token and the same token.
+
++ Request (application/json)
+
+    + Headers
+
+            X-API-KEY : AY7JsQof82R3NTaZu0KSzJJLiR364cSk
+            Accept : application/json
+
+    + Body
+
+            {
+                 "authenticationToken": "f89f3332a012b1beb4e66d5f783a04e8"
+            }
+            
++ Response 200 (application/json)
+
+        {
+            "account": "andymccorkell@gmail.com",
+            "authenticationToken": "f89f3332a012b1beb4e66d5f783a04e8"
+        }
