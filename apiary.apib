@@ -56,6 +56,31 @@ object containing an account email address and a new password.
             "authenticationToken": "044548a18337899b8dac630fe9d5f2bb",
             "userId": "648563f5968a2586"
         }
-    
+
+### Account sign-in [POST]
+
+You may sign-in in the application using this action. 
+It takes a JSON object containing an account email address and an account password
+
++ Request (application/json)
+
+    + Headers
+
+            X-API-KEY : AY7JsQof82R3NTaZu0KSzJJLiR364cSk
+            Accept : application/json
+
+    + Body
+
+            {
+                "emailAddress": "andymccorkell@gmail.com",
+                "password": "hQeqLhnM22"
+            }
+
++ Response 200 (application/json)
+
+        {
+            "authenticationToken": "f89f3332a012b1beb4e66d5f783a04e8",
+            "userId": "92855eb01cdd9fa1"
+        }
    
 
