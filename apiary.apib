@@ -117,7 +117,8 @@ service return user account releated to this token and the same token.
 ### Update user session [PUT]
 Every user in **Wattbike** has a individual training session. 
 You can update user session using this action. It takes a JSON
-object containing an account information (email) and training session information, such as data of labs 
+object containing an account information (email) and training session information, such as data of labs.
+That service returns user session id, link to the session and username.
 
 + Request (application/json)
 
@@ -170,4 +171,49 @@ object containing an account information (email) and training session informatio
             "sessionId": "5fda18d98a5c66ab41f34da47daaef33",
             "sessionLink": "http://hub.wattbike.com/andymccorkell/session/5fda18d98a5c66ab41f34da47daaef33",
             "username": "andymccorkell"
+        }
+
+## Session Process Status [/api/ranking/status]
+
+### Get session status ??[POST]
+
++ Request (application/json)
+
+    + Headers
+
+            X-API-KEY : AY7JsQof82R3NTaZu0KSzJJLiR364cSk
+            Accept : application/json
+
+    + Body
+
+            {
+                "sessionId": "b9aab02edb52ebb7639f0189ca1faa30"
+            }
+            
++ Response 200 (application/json)
+
+        {
+            "statusId": "3",
+            "statusDescription": "Processing Complete"
+        }
+
+## Firmware [/api/ranking/firmware]
+
+### Get the new version of device firmware
+
+You can get the new version of device software by using this action.
+
++ Request (application/json)
+
+    + Headers
+
+            X-API-KEY : AY7JsQof82R3NTaZu0KSzJJLiR364cSk
+            Accept : application/json
+            
++ Response 200 (application/json)
+
+        {
+            "firmwareVersion": "1.23.00",
+            "firmwareReleaseDate": "2015-08-10",
+            "firmwareLink": "http://wattbike.com/assets/software/Wattbike-ModelB-firmware-V12300-20150810.bin"
         }
