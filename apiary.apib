@@ -1,54 +1,38 @@
 FORMAT: 1A
-HOST: http://polls.apiblueprint.org/
+HOST: http://hub.wattbike.com
 
-# MD File Test
+# Wattbike
 
-Polls is a simple API allowing consumers to view polls and vote in them.
+This API provides access to the **Wattbike** service.
 
-## Questions Collection [/questions]
+## Status API [/api/ranking/]
 
-### List All Questions [GET]
+### Get the status API  [GET]
++ Request (application/json)
+
+    + Headers
+            
+            X-API-KEY : AY7JsQof82R3NTaZu0KSzJJLiR364cSk
+            Accept : application/json
 
 + Response 200 (application/json)
-
-        [
+            
             {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 2048
-                    }, {
-                        "choice": "Python",
-                        "votes": 1024
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 512
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 256
-                    }
-                ]
+                "status": "live"
             }
-        ]
 
-### Create a New Question [POST]
+## Update Account Registration [/api/ranking/users]
 
-You may create your own question using this action. It takes a JSON
-object containing a question and a collection of answers in the
-form of choices.
+### Update account password with charakters less then 6 symbols [PUT]
+
+You may update password using this action. It takes a JSON
+object containing an account email addres and a new password.
 
 + Request (application/json)
 
         {
-            "question": "Favourite programming language?",
-            "choices": [
-                "Swift",
-                "Python",
-                "Objective-C",
-                "Ruby"
-            ]
+            "emailAddress" : {dynamicEmail},
+            "password" : "dd"
         }
 
 + Response 201 (application/json)
