@@ -3,7 +3,7 @@ HOST: http://hub.wattbike.com/
 
 # Wattbike
 
-This API provides access to the **Wattbike** service.
+This API provides access to the **Wattbike** service. You can manage accounts and user sessions. Gets workouts and categories.
 
 ## Status API [/api/ranking]
 
@@ -109,4 +109,65 @@ service return user account releated to this token and the same token.
         {
             "account": "andymccorkell@gmail.com",
             "authenticationToken": "f89f3332a012b1beb4e66d5f783a04e8"
+        }
+        
+
+## Session Put [/api/ranking/sessions]
+
+### Update user session [PUT]
+Every user in **Wattbike** has a individual training session. 
+You can update user session using this action. It takes a JSON
+object containing an account information (email) and training session information, such as data of labs 
+
++ Request (application/json)
+
+    + Headers
+
+            X-API-KEY : AY7JsQof82R3NTaZu0KSzJJLiR364cSk
+            Accept : application/json
+
+    + Body
+
+            {
+                "dataVersion": 1.2,
+                "serialNumber": 25010062,
+                "firmwareVersion": 1.22,
+                "deviceUserAgent": "Apple-iPhone/501.347",
+                "commId": 1,
+                "startDate": "{dateTime}",
+                "account": "wattbike:andymccorkell@gmail.com",
+                "title": "A custom title string",
+                "weight": 96.0,
+                "maximumHeartRate": 180.0,
+                "maximumMinutePower": 123,
+                "latLong": "xxxxxxxx",
+                "altitude": "xxxxxxxx",
+                 "laps":[
+                  {
+                   "lap":1,
+                   "data":[
+                          {{rows}}
+                          ]
+                  },
+                  {
+                   "lap": 2,
+                   "data": [
+                                {{rows}}
+                           ]
+                  },
+                  {
+                   "lap": 3,
+                   "data": [
+                                {{rows}}
+                           ]
+                  }
+                 ]
+            }
+            
++ Response 200 (application/json)
+
+        {
+            "sessionId": "5fda18d98a5c66ab41f34da47daaef33",
+            "sessionLink": "http://hub.wattbike.com/andymccorkell/session/5fda18d98a5c66ab41f34da47daaef33",
+            "username": "andymccorkell"
         }
